@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mealFragment"
+            app:destination="@id/mealFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealsByCategoriesFragment"
+            app:destination="@id/mealsByCategoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_localFavoriteMealsFragment"
+            app:destination="@id/localFavoriteMealsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.categories.CategoriesFragment"
+        android:label="fragment_categories" />
+    <fragment
+        android:id="@+id/mealFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.meal.MealFragment"
+        android:label="fragment_meal"
+        tools:layout="@layout/fragment_meal" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mealFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mealFragment_to_mealsByCategoriesFragment"
+            app:destination="@id/mealsByCategoriesFragment"
+            app:popUpTo="@id/mealsByCategoriesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsByCategoriesFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.mealsbycategory.MealsByCategoriesFragment"
+        android:label="fragment_meals_by_categories"
+        tools:layout="@layout/fragment_meals_by_categories" >
+        <argument
+            android:name="nameOfCategory"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mealsByCategoriesFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mealsByCategoriesFragment_to_mealFragment"
+            app:destination="@id/mealFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/localFavoriteMealsFragment"
+        android:name="com.sameh.foodrecipesapp.ui.fragments.localfavoritemeals.LocalFavoriteMealsFragment"
+        android:label="fragment_local_favorite_meals"
+        tools:layout="@layout/fragment_local_favorite_meals" >
+        <action
+            android:id="@+id/action_localFavoriteMealsFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:popUpTo="@id/favoriteFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="meal"
+            app:argType="com.sameh.foodrecipesapp.model.pojo.Meal" />
+    </fragment>
+</navigation>

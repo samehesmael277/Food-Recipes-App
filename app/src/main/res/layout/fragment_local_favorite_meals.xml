@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.localfavoritemeals.LocalFavoriteMealsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/black"
+        android:layout_height="@dimen/_240sdp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/accent"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/img_meal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/img_random_meal"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_par"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fa_btn_delete_meal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete_icon"
+        app:tint="@color/white"
+        app:backgroundTint="@color/accent"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/floating_action_button_for_add_to_favorite" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8sdp"
+            android:padding="@dimen/_4sdp">
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:text="@string/category"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="@+id/tv_area"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:drawableStartCompat="@drawable/category_icon" />
+
+            <TextView
+                android:id="@+id/tv_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:text="@string/area"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_category"
+                app:layout_constraintTop_toTopOf="parent"
+                app:drawableStartCompat="@drawable/location_icon" />
+
+            <TextView
+                android:id="@+id/tv_instructions_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myfont"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16sdp"
+                android:layout_margin="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_category"/>
+
+            <TextView
+                android:id="@+id/tv_instructions_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/tv_instructions_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/img_go_to_watch_video"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:src="@drawable/video_icon"
+        app:backgroundTint="@android:color/transparent"
+        app:tint="@color/accent"
+        android:layout_gravity="bottom|center"
+        android:contentDescription="@string/go_to_watch_instructions_video" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

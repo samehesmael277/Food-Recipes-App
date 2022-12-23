@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:padding="@dimen/_4sdp"
+    android:clipToPadding="true"
+    android:elevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:background="@color/white"
+    android:id="@+id/card_view_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_meal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/meal_image" />
+
+        <TextView
+            android:id="@+id/tv_meal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/img_meal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/myfont"
+            android:textSize="@dimen/_14ssp"/>
+
+        <ImageView
+            android:id="@+id/heart"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/heart_icon"
+            android:contentDescription="@string/heart"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
